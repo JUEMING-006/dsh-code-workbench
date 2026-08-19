@@ -44,26 +44,26 @@
 `dsh-code-workbench` 采用 DeepSeek Harness 官方推崇的 **Cordis 插件与 Bundle 规范**，实现无侵入、可拔插设计：
 
 ```mermaid
-graph TB
-    subgraph DSH Host [Node.js 宿主端 (Host Half)]
-        Gateways["HTTP RPC Gateways\n(/api/code-workbench/*)"]
-        FS_GW["FileSystem Gateway\n(Policy Chain + Safe Ops)"]
-        TERM_GW["Terminal Gateway\n(UTF-8 PowerShell / Bash)"]
-        GIT_GW["Git Gateway\n(Status, Diff, Commit)"]
-        SEARCH_GW["Search Gateway\n(Ripgrep Regular Expression)"]
-        PROMPT_EXT["Active-File Prompt Section\n(Dynamic Model Awareness)"]
+flowchart TB
+    subgraph Host["Node.js 宿主端 (Host Half)"]
+        Gateways["HTTP RPC Gateways (/api/code-workbench/*)"]
+        FS_GW["FileSystem Gateway (Policy Chain + Safe Ops)"]
+        TERM_GW["Terminal Gateway (UTF-8 PowerShell / Bash)"]
+        GIT_GW["Git Gateway (Status, Diff, Commit)"]
+        SEARCH_GW["Search Gateway (Ripgrep Regular Expression)"]
+        PROMPT_EXT["Active-File Prompt Section (Dynamic Model Awareness)"]
     end
 
-    subgraph Browser [Web 浏览器端 (Browser Half)]
+    subgraph Client["Web 浏览器端 (Browser Half)"]
         AppRoot["Root Shadowing Slot (Priority: -1)"]
         Workbench["VS Code-Shaped Workbench Shell"]
         Monaco["Monaco Editor Surface (Loaded at Runtime)"]
         XTerm["xterm.js + FitAddon (SSE Output Stream)"]
         AIPanel["AI Assistant Panel (Chat / Agent / Plan)"]
-        Copilot["Inline Copilot (Alt+\\) & Inline Edit (Ctrl+K)"]
+        Copilot["Inline Copilot & Inline Edit (Ctrl+K)"]
     end
 
-    Browser <--> Gateways
+    Client <-->|HTTP RPC & SSE| Host
 ```
 
 1. **双端解耦 (Host + Browser)**：Node 端承载安全受控的文件/终端/Git 网关，浏览器端承载 Monaco 与全功能工作台；
