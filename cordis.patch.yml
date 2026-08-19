@@ -1,0 +1,16 @@
+# The dsh-code-workbench bundle patch: the code-mode workbench over any dsh
+# profile that ships the web surface (dsh-base + dsh-web-app).
+#
+# This patch only inserts rows; it never touches existing rows, so installing
+# the bundle leaves the default harness experience byte-identical. The single
+# inserted row is both a host plugin (the fs/terminal RPC gateways) and a
+# browser plugin: the package's `dsh.client` declaration routes its
+# exports["./client"] bundle to the browser through /plugins/<id>/client.js.
+#
+# Mode selection is a browser-side decision: the client half reads the mode
+# store on boot and only registers the workbench shell (shadowing the root
+# slot) in code mode. In harness mode the row is inert.
+
+- insert:
+    - id: code-workbench
+      name: 'dsh-code-workbench'

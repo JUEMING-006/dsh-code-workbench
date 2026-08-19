@@ -1,0 +1,4 @@
+# This directory is its own pnpm workspace: dsh-code-workbench is a
+# standalone plugin package that must not join the parent deepseek-harness
+# workspace (it depends on published @deepseek-ai/dsh-* releases only).
+packages: []
