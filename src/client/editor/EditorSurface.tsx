@@ -148,7 +148,7 @@ export const LANGUAGE_BY_FILENAME: Readonly<Record<string, string>> = {
   'tsconfig.json': 'json',
 }
 
-/** Language id → human-readable display label (VS Code status bar name). */
+/** Language id → human-readable display label (status bar name). */
 export const LANGUAGE_NAMES: Readonly<Record<string, string>> = {
   typescript: 'TypeScript',
   javascript: 'JavaScript',

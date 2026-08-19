@@ -1,6 +1,6 @@
 /**
- * Sash: the draggable divider between two workbench regions (VS Code sash
- * semantics). Pointer-down starts a drag tracked on window listeners (no
+ * Sash: the draggable divider between two workbench regions.
+ * Pointer-down starts a drag tracked on window listeners (no
  * Pointer Capture API dependency, so jsdom can drive it too); the owner
  * receives signed pixel deltas from the drag start; double-click resets the
  * region to its default size.

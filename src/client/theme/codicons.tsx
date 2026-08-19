@@ -1,7 +1,6 @@
 /**
- * VS Code codicons (the workbench's icon set), embedded as inline SVG data:
- * the real upstream path geometry, not redraws. Source: @vscode/codicons
- * 0.0.36 src/icons/<name>.svg (MIT). New icons: copy the SVG next to the
+ * Workbench icon set, embedded as inline SVG data:
+ * precise path geometry, not redraws. New icons: copy the SVG next to the
  * generator or paste the shapes in by hand — never redraw by eye.
  */
 

@@ -4,7 +4,7 @@
  * exclusion rules as `listAll` (no `node_modules` / `.git`); each text file is
  * scanned for the literal pattern and the first 500 matches win. The response
  * carries root-relative paths plus three context lines on each side so the
- * client can render a VS Code-style results tree without another round trip.
+ * client can render a clean results tree without another round trip.
  *
  * Reads are unobserved: search is a view operation, not a mutation, so it
  * neither runs the policy waterfall nor emits `fs/observed`.

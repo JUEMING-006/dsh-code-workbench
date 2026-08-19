@@ -4,7 +4,7 @@
  * and maximize), and zen mode. Declared through the runtime's defineStore
  * (the same snapshot-store engine the harness layout store rides) with the
  * engine's own persistence: one localStorage entry per persist key, so a
- * reload restores the arrangement (VS Code parity). The key carries a shape
+ * reload restores the arrangement. The key carries a shape
  * version; structural state changes bump it instead of migrating.
  */
 
@@ -14,10 +14,10 @@ import type { EngineStoreHandle } from '@deepseek-ai/dsh-client-runtime/client'
 /** Primary-sidebar activities; the AI assistant lives in the auxiliary bar. */
 export type ActivityId = 'files' | 'search' | 'ai' | 'settings' | 'scm' | 'run' | 'extensions'
 
-/** Dock position of the bottom/side panel (VS Code panel position setting). */
+/** Dock position of the bottom/side panel. */
 export type PanelPosition = 'bottom' | 'left' | 'right'
 
-/** Where the AI assistant view lives (VS Code view mobility). */
+/** Where the AI assistant view lives. */
 export type AiLocation = 'auxiliary' | 'sidebar' | 'panel' | 'floating'
 
 /** Live layout snapshot. */
@@ -38,7 +38,7 @@ export interface WorkbenchGeometryState {
   panelCollapsed: boolean
   /** Dock position of the panel. */
   panelPosition: PanelPosition
-  /** Whether the panel fills the editor area (VS Code maximize panel). */
+  /** Whether the panel fills the editor area. */
   panelMaximized: boolean
   /** Zen mode: chrome hidden, editor only (status bar keeps the exit). */
   zen: boolean
@@ -46,7 +46,7 @@ export interface WorkbenchGeometryState {
   activity: ActivityId
   /** Container of the AI assistant view (auxiliary bar by default). */
   aiLocation: AiLocation
-  /** Whether the editor minimap is visible (VS Code minimap). */
+  /** Whether the editor minimap is visible. */
   minimapEnabled: boolean
 }
 
@@ -57,7 +57,7 @@ export const PANEL_HEIGHT_RANGE: readonly [min: number, max: number] = [80, 600]
 export const PANEL_WIDTH_RANGE: readonly [min: number, max: number] = [200, 800]
 
 /** Boot layout: Explorer in the primary sidebar, AI assistant in the
- * auxiliary bar, panel hidden (VS Code default sidebar width). */
+ * auxiliary bar, panel hidden. */
 export const DEFAULT_GEOMETRY: WorkbenchGeometryState = {
   sidebarWidth: 300,
   auxBarWidth: 300,

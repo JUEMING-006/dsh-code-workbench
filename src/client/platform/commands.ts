@@ -1,5 +1,5 @@
 /**
- * The workbench command registry: VS Code-style command ids
+ * The workbench command registry: structured command ids
  * (workbench.action.*) with category, title, run, and default keybinding.
  * One table drives the command palette, the menu bar, and the keybinding
  * dispatcher — a command added here is reachable from all three.
@@ -235,8 +235,8 @@ export const DEFAULT_KEYBINDINGS: readonly KeybindingRule[] = COMMANDS.flatMap(
   command => command.binding !== undefined ? [command.binding] : [],
 )
 
-/** Menu bar model derived from the command table: category groups, VS Code
- * menu order. Labels are i18n MessageIds resolved at render time. */
+/** Menu bar model derived from the command table: category groups,
+ * standard menu order. Labels are i18n MessageIds resolved at render time. */
 export const MENUS: readonly { label: MessageId; items: readonly { commandId: string }[] }[] = [
   {
     label: 'menu.file',
@@ -286,7 +286,7 @@ export function commandOf(id: string): CommandEntry | undefined {
   return COMMANDS.find(command => command.id === id)
 }
 
-/** The four right-click zones the workbench offers (VS Code menu ids). */
+/** The four right-click zones the workbench offers. */
 export type ContextMenuZone = 'explorer/context' | 'editor/title/context' | 'editor/context' | 'chat/context'
 
 /** Command ids per zone; ids live in the command table, regions execute. */

@@ -1,5 +1,5 @@
 /**
- * Quick Input: the single widget behind the VS Code entry surfaces — Ctrl+P
+ * Quick Input: the single widget behind the quick entry surfaces — Ctrl+P
  * Go to File (fuzzy file picker over the workspace listing), Ctrl+Shift+P
  * Show All Commands (fuzzy command palette), and the one-line prompt mode
  * the explorer uses for New File / New Folder / Rename name entry.

@@ -39,7 +39,7 @@ interface TreeNodeProps {
   readonly onRowContextMenu: (event: MouseEvent, resource: CommandResource) => void
 }
 
-/** VS Code tree indent: one 8px step per depth level. */
+/** Tree indent: one 8px step per depth level. */
 const INDENT_STEP = 8
 function joinChild(parent: string, name: string): string {
   if (parent.endsWith('/') || parent.endsWith('\\')) {

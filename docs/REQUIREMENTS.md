@@ -8,8 +8,8 @@
 |---|---|---|
 | 独立可分发插件 | 作为 dsh 原生 bundle（npm 包 + cordis.patch.yml + dsh.client 声明），**零修改 deepseek-harness 本体** | 完成 |
 | 任何设备可用 | 任意装有 dsh web 的设备经 `dsh plugin --profile web add dsh-code-workbench` 安装即用 | 完成（link: 本地联调） |
-| 双模式 | 编码模式（VS Code 形态）+ harness 原版样式（默认） | 完成 |
-| 可自由选择 VS Code 功能子集 | 按需实现，不做全套（扩展市场/调试器/远程开发等明确排除） | 完成（见"明确不做"） |
+| 双模式 | 编码模式（IDE 形态）+ harness 原版样式（默认） | 完成 |
+| 可自由选择功能子集 | 按需实现，不做全套（扩展市场/调试器/远程开发等明确排除） | 完成（见"明确不做"） |
 
 ## 二、模式切换
 
@@ -22,19 +22,19 @@
 | 故障回退 | workbench 渲染崩溃自动 abdicate，harness 壳接管 | 完成（框架机制） |
 | harness 零副作用 | harness 模式下仅一个浮动按钮，无其他注册/监听 | 完成 |
 
-## 三、编码模式工作台（VS Code 形态，逐项对齐）
+## 三、编码模式工作台（标准 IDE 规范，逐项对齐）
 
-| VS Code 要素 | 需求 | 状态 |
+| 要素 | 需求 | 状态 |
 |---|---|---|
 | 菜单栏 | File / View / Terminal / Help，下拉菜单（View→切换侧边栏/面板等） | 完成 |
-| 活动栏 | 48px 纯图标列，VS Code 顺序（Explorer 第一）：Explorer / Search / AI Assistant / Settings | 完成 |
+| 活动栏 | 48px 纯图标列，标准顺序（Explorer 第一）：Explorer / Search / AI Assistant / Settings | 完成 |
 | 侧边栏 | 视图标题栏（EXPLORER/SEARCH/AI ASSISTANT/SETTINGS）+ 操作按钮（Explorer 刷新）；内容随活动栏切换 | 完成 |
 | 编辑器区 | 标签条（打开/切换/关闭/脏标记）+ Monaco + 无文件时 Welcome 欢迎页 | 完成 |
 | 底部面板 | TERMINAL 标题栏 + xterm 终端 + 关闭按钮；可折叠（Show/Hide Panel） | 完成 |
 | 状态栏 | 两端分区：左（Code Mode 高亮项）；右（文件语言、UTF-8、Exit、面板/侧边栏切换）；22px（StatusbarPart.HEIGHT） | 完成 |
-| 主题 | VS Code **Dark Modern**：钉住 vscode 1.96.0 权威色板（dark_modern.json + 平台 list 默认值）+ codicons 图标集 + 尺寸常量（状态栏 22 / 活动栏 48 / 标签 35 / 标题栏 35 / 侧栏默认 300）；全部经 theme/ 令牌层，组件零颜色字面量（有测试门禁） | 完成 |
+| 主题 | **Dark Modern**：权威色板（dark_modern.json + 平台 list 默认值）+ 图标集 + 尺寸常量（状态栏 22 / 活动栏 48 / 标签 35 / 标题栏 35 / 侧栏默认 300）；全部经 theme/ 令牌层，组件零颜色字面量（有测试门禁） | 完成 |
 | 侧边栏/面板拖拽调宽调高 | Sash 拖拽手柄（4px 热区、hover 高亮、双击重置）：主侧栏/辅助侧栏/面板（随停靠方向） | 完成 |
-| 辅助侧栏（Auxiliary Bar） | 右侧视图容器（Copilot 同款停靠位），AI 助手面板默认驻留；活动栏 Sparkle 图标 + Ctrl+Alt+B + 状态栏图标三路开关 | 完成 |
+| 辅助侧栏（Auxiliary Bar） | 右侧视图容器，AI 助手面板默认驻留；活动栏 Sparkle 图标 + Ctrl+Alt+B + 状态栏图标三路开关 | 完成 |
 | 面板换位 | 下/右/左三向停靠（View 菜单），独立宽/高存储 | 完成 |
 | 面板最大化 | 面板标题栏 ChevronUp/Down + View 菜单，最大化时铺满编辑器区 | 完成 |
 | 布局持久化 | defineStore 引擎 persist（localStorage 键 `dsh.workbench.layout.v1`，带形状版本），刷新恢复 | 完成 |

@@ -58,7 +58,7 @@ describe('WorkbenchShell', () => {
     expect(document.querySelector('[data-workbench-auxbar]')).toBeTruthy()
     expect(document.querySelector('[data-workbench-editor]')).toBeTruthy()
     expect(document.querySelector('[data-workbench-statusbar]')).toBeTruthy()
-    // Activity rail renders the icon entries (VS Code labels).
+    // Activity rail renders the icon entries.
     expect(screen.getByRole('button', { name: 'AI Assistant' })).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Explorer' })).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Search' })).toBeTruthy()
@@ -172,7 +172,7 @@ describe('WorkbenchShell', () => {
   it('enters and leaves zen mode', () => {
     mountShell()
     fireEvent.click(screen.getByRole('button', { name: 'View' }))
-    // The chord binding rides the menu label (VS Code parity).
+    // The chord binding rides the menu label.
     fireEvent.click(screen.getByRole('button', { name: 'Toggle Zen ModeCtrl+Z' }))
     expect(document.querySelector('[data-workbench-menubar]')).toBeNull()
     expect(document.querySelector('[data-workbench-activitybar]')).toBeNull()

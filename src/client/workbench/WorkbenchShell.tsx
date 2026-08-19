@@ -1,7 +1,7 @@
 /**
  * The workbench shell: the root-slot entry the plugin registers in code mode.
  *
- * The frame is the VS Code workbench grid: a menu bar in the title bar, an
+ * The frame is the workbench grid: a menu bar in the title bar, an
  * icon activity rail, a resizable primary sidebar, the editor area with a
  * dockable panel (bottom/left/right, maximizable), a resizable auxiliary bar
  * (the AI assistant's container), and a two-sided status bar — plus zen
@@ -70,7 +70,7 @@ export type WorkbenchShellProps =
   & PropsRenderSlots<WorkbenchRegionKey>
   & PropsStore<ReturnType<typeof createWorkbenchStore>>
 
-/** Primary-sidebar rail entries (VS Code order: explorer first). */
+/** Primary-sidebar rail entries (explorer first). */
 const MAIN_ACTIVITIES = [
   { id: 'files' as ActivityId, label: 'activity.explorer' as MessageId, Icon: IconFiles },
   { id: 'search' as ActivityId, label: 'activity.search' as MessageId, Icon: IconSearch },
@@ -519,7 +519,7 @@ function writeStoredCwd(storage: Storage, cwd: string | undefined): void {
   const auxVisible = !geometry.zen && !geometry.auxBarHidden
   const panelVisible = !geometry.zen && !geometry.panelCollapsed
   // The AI assistant view is one logical slot contributed wherever its
-  // location points (VS Code view mobility: auxiliary / sidebar / panel /
+  // location points (view mobility: auxiliary / sidebar / panel /
   // floating); its content registration stays on the auxbar slot.
   const aiView = props.renderSlot('workbench.auxbar', { useSessions: props.useSessions, currentCwd })
   const panelContent = geometry.aiLocation === 'panel' ? aiView : <PanelContainer useSessions={props.useSessions} currentCwd={currentCwd} />

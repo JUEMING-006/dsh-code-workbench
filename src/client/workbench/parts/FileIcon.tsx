@@ -1,7 +1,6 @@
 /**
  * File icon helper for the file explorer tree.
- * Maps file extensions and special names to corresponding VS Code-style
- * icons and CSS classes (colors provided via tokens and stylesheet).
+ * Maps file extensions and special names to corresponding icons and CSS classes.
  */
 
 import { IconFolder, IconFolderOpened, IconFile, IconFileCode, IconFileMedia } from '../../theme/codicons.tsx'

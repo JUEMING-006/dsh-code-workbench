@@ -61,7 +61,7 @@ export const WORKBENCH_CSS = `
   text-rendering: optimizeLegibility;
 }
 
-/* Custom VS Code scrollbar styling */
+/* Custom scrollbar styling */
 .dsh-wb *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -442,7 +442,7 @@ export const WORKBENCH_CSS = `
 }
 
 /* Floating AI window (aiLocation 'floating'): an absolutely-positioned
-   widget over the editor area, above the status bar (VS Code widget skin). */
+   widget over the editor area, above the status bar (widget skin). */
 .dsh-wb-aifloat {
   position: absolute;
   right: 16px;
@@ -468,7 +468,7 @@ export const WORKBENCH_CSS = `
   min-height: 0;
 }
 
-/* Sashes: the 4px drag handles between regions (VS Code sash sizing). */
+/* Sashes: the 4px drag handles between regions (sash sizing). */
 .dsh-wb-sash {
   position: relative;
   flex-shrink: 0;
@@ -1225,7 +1225,7 @@ export const WORKBENCH_CSS = `
   background: var(--dsh-wb-tab-activeBorderTop);
 }
 
-/* Preview (unpinned) tabs render italic, VS Code tab semantics. */
+/* Preview (unpinned) tabs render italic, tab semantics. */
 .dsh-wb-tab-preview {
   font-style: italic;
 }

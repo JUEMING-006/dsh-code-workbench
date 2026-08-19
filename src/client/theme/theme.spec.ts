@@ -41,7 +41,7 @@ describe('design tokens', () => {
     expect(offenders).toEqual([])
   })
 
-  it('pins the VS Code baseline dimensions', () => {
+  it('pins the workbench baseline dimensions', () => {
     // StatusbarPart.HEIGHT, ActivitybarPart.ACTION_HEIGHT, and
     // EditorTabsControl.EDITOR_TAB_HEIGHT.normal at the pinned baseline.
     expect(SIZES.statusBarHeight).toBe(22)

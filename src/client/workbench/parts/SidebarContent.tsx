@@ -1,6 +1,6 @@
 /**
  * Sidebar content: the single workbench.sidebar occupant that switches its
- * body by the active activity-rail entry, under a VS Code-style view header
+ * body by the active activity-rail entry, under a structured view header
  * (title + actions). The AI assistant lives in the auxiliary bar
  * (AuxBarContent), not here.
  */
@@ -34,7 +34,7 @@ export interface SidebarContentProps {
   readonly currentCwd?: string | undefined
 }
 
-/** View titles per activity (VS Code view-header convention). */
+/** View titles per activity. */
 const TITLES: Record<ActivityId, MessageId> = {
   files: 'explorer.title',
   search: 'search.title',

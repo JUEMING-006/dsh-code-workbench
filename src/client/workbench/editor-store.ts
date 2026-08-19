@@ -4,7 +4,7 @@
  * defineStore engine as the geometry store; the workbench shell owns one
  * instance and provides it to its regions through React context.
  *
- * The editor is a set of groups (VS Code editor groups). v1 supports one
+ * The editor is a set of groups. v1 supports one
  * split level: either a single group, or two groups split horizontally
  * (side by side) or vertically (stacked). Tab paths are unique across all
  * groups — opening a path already open in another group focuses that group
@@ -24,7 +24,7 @@ export interface EditorTab {
   /** Whether unsaved edits are pending. */
   dirty: boolean
   /**
-   * Preview tabs (VS Code unpinned tabs) render italic and are replaced by
+   * Preview tabs (unpinned tabs) render italic and are replaced by
    * the next preview opened in the same group — unless they are dirty, since
    * replacing a dirty tab would discard unsaved edits.
    */
@@ -99,7 +99,7 @@ function groupOf(draft: EditorState, path: string): EditorGroup | undefined {
 /** Split the active group: a new empty group takes focus and the new side. */
 function splitActive(draft: EditorState, direction: 'horizontal' | 'vertical'): void {
   // v1 keeps one split level: a second split of a two-group editor flips
-  // the existing split direction (VS Code's repeated Ctrl+\ re-splits).
+  // the existing split direction (repeated Ctrl+\ re-splits).
   if (draft.groups.length === 2) {
     draft.splitDirection = direction
     return

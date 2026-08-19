@@ -1,6 +1,6 @@
 {
   "name": "dsh-code-workbench",
-  "description": "Code-mode workbench plugin for DeepSeek Harness: a VS Code-shaped shell (activity bar / sidebar / editor / panel / status bar) with a native full-capability AI assistant panel, switchable from the default harness chat layout.",
+  "description": "Code-mode workbench plugin for DeepSeek Harness: a modern IDE shell (activity bar, sidebar, editor, panel, status bar) with a native full-capability AI assistant panel, switchable from the default harness chat layout.",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "type": "module",

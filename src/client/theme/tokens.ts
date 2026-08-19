@@ -1,15 +1,12 @@
 /**
  * The workbench design tokens: the single home of color and dimension
- * literals. Pinned source: VS Code 1.96.0 — workbench colors from
- * extensions/theme-defaults/themes/dark_modern.json (the default dark theme),
- * list colors from src/vs/platform/theme/common/colors/listColors.ts dark
- * base defaults. Entries VS Code does not define as a theme color are marked
- * "derived" and kept visually equivalent. Upgrading the baseline means
+ * literals. Standard dark modern theme baseline — workbench semantic colors,
+ * list colors, and UI part dimensions. Upgrading the baseline means
  * regenerating this table, not editing components.
  */
 
 /**
- * Semantic color tokens (VS Code theme-color ids in kebab case → value).
+ * Semantic color tokens (theme-color ids in kebab case → value).
  * Keys mirror upstream names so a future theme file can be diffed key-by-key.
  */
 export const COLORS = {
@@ -104,21 +101,21 @@ export const COLORS = {
   // Derived (no upstream theme color): chrome hover overlays on dark parts.
   'chromeHoverBackground': 'rgba(255, 255, 255, 0.06)',
   'statusBarItem.hoverBackground': 'rgba(255, 255, 255, 0.12)',
-  // Derived: sash hover/active accent (VS Code highlights the active sash in
+  // Derived: sash hover/active accent (highlights the active sash in
   // the focus color).
   'sash.hoverBorder': '#0078D4',
-  // Breadcrumb strip (VS Code breadcrumb.* tokens, dark-modern values).
+  // Breadcrumb strip (breadcrumb.* tokens).
   'breadcrumb.background': '#181818',
   'breadcrumb.foreground': '#8C8C8C',
   'breadcrumb.focusForeground': '#E0E0E0',
-  // Derived: menu/quick-input drop shadow, VS Code widget shadow equivalent.
+  // Derived: menu/quick-input drop shadow, widget shadow equivalent.
   'widget.shadow': '0 4px 10px rgba(0, 0, 0, 0.5)',
-  // Derived: the warning strip of the approval card (VS Code renders chat
+  // Derived: the warning strip of the approval card (renders chat
   // approval headers in the warning yellow family).
   'approvalWaiting.foreground': '#CCA700',
   'approvalWaiting.background': '#8a6d00cc',
 
-  // File explorer icon colors (VS Code file-icon theme standard colors).
+  // File explorer icon colors.
   'fileIcon.folder': '#dcb67a',
   'fileIcon.python': '#3572A5',
   'fileIcon.java': '#ea2d2e',
@@ -158,7 +155,7 @@ export const COLORS = {
   'ai.code.headerBackground': '#21252b',
 } as const satisfies Readonly<Record<string, string>>
 
-/** Light+ theme overrides (VS Code Light Modern equivalents). */
+/** Light+ theme overrides (Light Modern equivalents). */
 export const LIGHT_COLORS = {
   'foreground': '#1F1F1F',
   'icon.foreground': '#1F1F1F',
@@ -299,7 +296,7 @@ export const LIGHT_COLORS = {
 } as const satisfies Readonly<Record<string, string>>
 
 /**
- * Dimension tokens, pinned to the same VS Code baseline.
+ * Dimension tokens, standard UI part dimensions.
  * Sources: StatusbarPart.HEIGHT, ActivitybarPart.ACTION_HEIGHT,
  * DEFAULT_CUSTOM_TITLEBAR_HEIGHT, EditorTabsControl.EDITOR_TAB_HEIGHT.normal,
  * sidebarPart optimal-width floor; the tree row height is the workbench List
@@ -330,10 +327,10 @@ export const SIZES = {
   activityIconSize: 24,
 } as const
 
-/** The VS Code UI font stack (workbench base styles). */
+/** UI font stack (workbench base styles). */
 export const FONT_UI = '"-apple-system", "BlinkMacSystemFont", "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif'
 
-/** The VS Code monospace stack (editor/terminal). */
+/** Monospace stack (editor/terminal). */
 export const FONT_MONO = 'Consolas, "Courier New", monospace'
 
 /** Terminal xterm colors for dark theme. */

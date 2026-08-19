@@ -51,7 +51,7 @@ export function chordOfDef(def: KeybindingDef): string {
   return parts.join('+')
 }
 
-/** Display label for a definition ("Ctrl+Shift+P" — VS Code menu convention). */
+/** Display label for a definition ("Ctrl+Shift+P"). */
 export function keybindingLabel(def: KeybindingDef): string {
   const parts: string[] = []
   if (def.ctrl === true) parts.push('Ctrl')
@@ -62,7 +62,7 @@ export function keybindingLabel(def: KeybindingDef): string {
 }
 
 /** One rule: a chord dispatches one command id; a `prefix` makes it a two-step
- * chord (VS Code Ctrl+K style: the prefix opens a pending wait, the `def`
+ * chord (the prefix opens a pending wait, the `def`
  * completes it). Prefixed rules never resolve from a bare press. */
 export interface KeybindingRule {
   readonly def: KeybindingDef

@@ -1,18 +1,17 @@
 # dsh-code-workbench 完整规格文档
 
 > 状态：当前完成情况 + 待实现目标 + 逐项实现方法 + 最终实现效果。
-> 更新日期：2026-08-17。计划起源见 [PLAN-VSCODE-ALIGNMENT.md](./PLAN-VSCODE-ALIGNMENT.md)。
 
 ## 1. 项目定位与约束
 
-**dsh-code-workbench** 是 DeepSeek Harness 的一个可分发插件（installable bundle），为宿主提供一套按 VS Code 1.96.0（Dark Modern / Light+ 基准）形态重建的**编码模式**界面。
+**dsh-code-workbench** 是 DeepSeek Harness 的一个可分发插件（installable bundle），为宿主提供一套现代专业标准的**编码工作台**界面。
 
 四条不可动摇的约束：
 
 1. **零修改本体**。`D:\deepseek-harness` 主仓库一行不改；插件只消费本体已发布的客户端运行时面（`dsh.client`、`ctx.sessions`、`ctx.workspaces`、`ctx.slots`、`defineStore`、`ctx.fs`、`ctx.subprocess`、`ctx.userQuestions` 等），缺失能力一律在插件内补（HTTP 网关 + 客户端实现），绝不在本体打洞。
-2. **双模式共存**。harness 模式（原生样式）与 workbench 模式（VS Code 形态）由同一个开关切换；开关两端都要有入口（harness 端悬浮 pill / workbench 端状态栏按钮）。
-3. **任意设备可安装**。`dsh plugin --profile web add dsh-code-workbench` 一条命令装完；纯 Web 插件形态，无 Electron、无原生依赖（PTY 终端复用本体的 subprocess 服务，插件不打包 node-pty）。
-4. **VS Code 视觉对齐为硬指标**。颜色、尺寸、间距、图标全部取自 VS Code 真实资源（`dark_modern.json` / `listColors.ts` / `@vscode/codicons`），并有用测试强制约束（组件内不允许出现颜色字面量）。
+2. **双模式共存**。harness 模式（原生样式）与 workbench 模式（工作台形态）由同一个开关切换；开关两端都要有入口（harness 端悬浮 pill / workbench 端状态栏按钮）。
+3. **任意设备可安装**。`dsh plugin --profile web add git+https://github.com/JUEMING-006/dsh-code-workbench.git` 一条命令装完；纯 Web 插件形态，无 Electron、无原生依赖（PTY 终端复用本体的 subprocess 服务，插件不打包 node-pty）。
+4. **设计令牌单一来源**。颜色、尺寸、间距全部经由 `tokens.ts` 集中管理，并有用测试强制约束（组件内不允许出现颜色字面量）。
 
 范围取舍（明确排除）：扩展市场、调试器、远程开发、SCM 面板、Electron 外壳。AI 助手保留 DeepSeek Harness 的全部原生能力（会话、工具、审批、提问、subagent），不做阉割版。
 
