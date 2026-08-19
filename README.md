@@ -79,28 +79,27 @@ flowchart TB
 - Node.js `^22.19 || >=24`
 - pnpm `^9.0`
 
-### 方式 1：一键通过 DSH CLI 安装（推荐）
+### 方式 1：通过 GitHub 仓库一键安装（推荐）
 
 ```bash
-# 从 npm 官方或私有 Registry 安装
-dsh plugin --profile web add dsh-code-workbench
+dsh plugin --profile web add git+https://github.com/JUEMING-006/dsh-code-workbench.git
 ```
 
-### 方式 2：离线 Tarball 安装包
+### 方式 2：离线 Tarball 压缩包安装
 
 ```bash
-# 1. 在工程目录下构建打包
+# 1. 在项目目录下打包
 pnpm install && pnpm run build
 pnpm pack
 
-# 2. 在目标机器上一键安装
+# 2. 在任意设备上一键安装
 dsh plugin --profile web add ./dsh-code-workbench-0.1.0.tgz
 ```
 
-### 方式 3：本地开发软链接安装
+### 方式 3：本地目录安装
 
 ```bash
-dsh plugin --profile web add file:/path/to/dsh-code-workbench
+dsh plugin --profile web add ./dsh-code-workbench
 ```
 
 ### 启动工作台
